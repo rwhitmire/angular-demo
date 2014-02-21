@@ -20,6 +20,15 @@ body {
 
 #grid-template {
 	margin: -10px;
+	margin-bottom: 15px;
+}
+
+#grid-template .points {
+	color: #666;
+}
+
+#grid-template .description {
+	font-size: 18px;
 }
 
 #list-template {

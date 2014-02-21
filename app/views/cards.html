@@ -8,23 +8,27 @@
 		</a>
 	</div>
 
-	<card-list ng-show="viewType == 'list'"></card-list>
-	<card-grid ng-show="viewType == 'grid'"></card-grid>
+	<div ng-show="cards.length > 0">
+		<card-list ng-show="viewType == 'list'"></card-list>
+		<card-grid ng-show="viewType == 'grid'"></card-grid>
+	</div>
+
+	<div ng-show="cards.length == 0" class="alert alert-info">no cards have been added. click the "New Card" button to add one.</div>
 
 	<button class="btn btn-default" ng-click="showForm()" ng-hide="formVisible">New Card</button>
 
-	<form name="form" ng-show="formVisible" ng-submit="save()">
+	<form name="form" ng-show="formVisible" ng-submit="save()" novalidate>
 		<div class="form-group">
 			<label>points</label>
-			<input class="form-control" type="text" ng-model="form.points" />
+			<input class="form-control" type="text" ng-model="form.points" required />
 		</div>
 
 		<div class="form-group">
 			<label>description</label>
-			<textarea class="form-control" type="text" ng-model="form.description"></textarea>
+			<textarea class="form-control" type="text" ng-model="form.description" required></textarea>
 		</div>
 
-		<button type="submit" class="btn btn-default">Submit</button>
+		<button type="submit" class="btn btn-default" ng-disabled="form.$invalid">Submit</button>
 		<button type="button" class="btn btn-link" ng-click="hideForm()">Cancel</button>
 	</form>
 </div>

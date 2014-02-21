@@ -1,9 +1,8 @@
 <div id="grid-template">
 	<div class="grid-item" ng-repeat="card in cards">
-		<span>{{card.id}}</span>
-		<span>{{card.points}}</span>
-		<span>{{card.description}}</span>
+		<div class="points">{{card.points}}</div>
+		<div class="description">{{card.description}}</div>
 	</div>
-</div>
 
-<div class="clearfix"></div>
+	<div class="clearfix"></div>
+</div>
