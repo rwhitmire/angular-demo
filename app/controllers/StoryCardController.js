@@ -20,12 +20,13 @@ function($scope, storyCardService, viewType){
 
 	$scope.hideForm = function() {
 		$scope.formVisible = false;
+		$scope.form = {};
 	};
 
 	$scope.addCard = function() {
 		$scope.cards.push($scope.form);
 		storyCardService.saveCards($scope.cards, function(){
-			console.log('done saving.');
+			$scope.hideForm();
 		});
 	};
 

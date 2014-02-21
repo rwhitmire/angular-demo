@@ -1,16 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
+ 	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>story card board</title>
+
 	<script type="text/javascript" src="vendor/angular.min.js"></script>
 	<script type="text/javascript" src="vendor/angular-route.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
 </head>
 <body>
-	<nav>
-		<a href="/#/">list view</a>
-		<a href="/#/grid">grid view</a>
-	</nav>
-	<div ng-view></div>
+
+	<div class="container">
+		<div ng-view></div>
+	</div>
+
+	<script type="text/javascript" src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
 	<script type="text/javascript" src="app/app.js"></script>
 	<script type="text/javascript" src="app/config.js"></script>
 
