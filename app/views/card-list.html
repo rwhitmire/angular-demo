@@ -1,16 +1,23 @@
-<table class="table">
-	<thead>
-		<tr>
-			<th>id</th>
-			<th>points</th>
-			<th>description</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr ng-repeat="card in cards">
-			<td>{{card.id}}</td>
-			<td>{{card.points}}</td>
-			<td>{{card.description}}</td>
-		</tr>
-	</tbody>
-</table>
+<div id="list-template">
+	<table class="table table-condensed table-bordered">
+		<thead>
+			<tr>
+				<th>id</th>
+				<th>points</th>
+				<th>description</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="card in cards">
+				<td>{{card.id}}</td>
+				<td>{{card.points}}</td>
+				<td>{{card.description}}</td>
+				<td>
+					<button class="btn btn-xs btn-default" ng-click="edit(card)">edit</button>
+					<button class="btn btn-xs btn-danger" ng-click="remove(card)">delete</button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

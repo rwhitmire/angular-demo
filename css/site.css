@@ -1,0 +1,27 @@
+body {
+	padding-top: 20px;
+	padding-bottom: 50px;
+}
+
+.view-buttons a {
+	font-size: 12px;
+	margin-bottom: 10px;
+}
+
+.grid-item {
+	border: 1px solid #DDD;
+	margin: 10px;
+	padding: 10px;
+	height: 160px;
+	width: 200px;
+	float: left;
+	box-shadow: 3px 3px 5px #666;
+}
+
+#grid-template {
+	margin: -10px;
+}
+
+#list-template {
+
+}

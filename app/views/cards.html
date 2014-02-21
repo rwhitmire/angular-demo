@@ -1,7 +1,11 @@
 <div>
-	<div class="btn-group">
-		<a class="btn btn-default" ng-class="{'active': viewType == 'list'}" href="/#/">list view</a>
-		<a class="btn btn-default" ng-class="{'active': viewType == 'grid'}" href="/#/grid">grid view</a>
+	<div class="btn-group view-buttons">
+		<a class="btn btn-default" ng-class="{'active': viewType == 'list'}" href="/#/">
+			<span class="glyphicon glyphicon-th-list"></span>
+		</a>
+		<a class="btn btn-default" ng-class="{'active': viewType == 'grid'}" href="/#/grid">
+			<span class="glyphicon glyphicon-th"></span>
+		</a>
 	</div>
 
 	<card-list ng-show="viewType == 'list'"></card-list>
@@ -9,7 +13,7 @@
 
 	<button class="btn btn-default" ng-click="showForm()" ng-hide="formVisible">New Card</button>
 
-	<form name="form" ng-show="formVisible" ng-submit="addCard()">
+	<form name="form" ng-show="formVisible" ng-submit="save()">
 		<div class="form-group">
 			<label>points</label>
 			<input class="form-control" type="text" ng-model="form.points" />

@@ -10,10 +10,6 @@ function($scope, storyCardService, viewType){
 	$scope.viewType = viewType;
 	$scope.cards = [];
 
-	storyCardService.getAll(function(cards){
-		$scope.cards = cards || [];
-	});
-
 	$scope.showForm = function() {
 		$scope.formVisible = true;
 	};
@@ -23,11 +19,32 @@ function($scope, storyCardService, viewType){
 		$scope.form = {};
 	};
 
-	$scope.addCard = function() {
-		$scope.cards.push($scope.form);
-		storyCardService.saveCards($scope.cards, function(){
-			$scope.hideForm();
+	$scope.loadCards = function(callback) {
+		storyCardService.getAll(function(cards){
+			$scope.cards = cards;
+			if(callback) callback();
 		});
 	};
+
+	$scope.save = function() {
+		storyCardService.upsert($scope.form, function() {
+			$scope.loadCards(function(){
+				$scope.hideForm();
+			});
+		});
+	};
+
+	$scope.edit = function(card) {
+		$scope.form = {id: card.id, points: card.points, description: card.description};
+		$scope.showForm();
+	};
+
+	$scope.remove = function(card) {
+		storyCardService.remove(card, function(){
+			$scope.loadCards();
+		});
+	};
+
+	$scope.loadCards();
 
 }]);
