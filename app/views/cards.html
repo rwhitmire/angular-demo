@@ -1,0 +1,22 @@
+<div>
+	<card-list ng-show="viewType == 'list'"></card-list>
+	<card-grid ng-show="viewType == 'grid'"></card-grid>
+
+	<button ng-click="showForm()" ng-hide="formVisible">New Card</button>
+
+	<form name="form" ng-show="formVisible" ng-submit="addCard()">
+		<div>
+			<label>points</label>
+			<input type="text" ng-model="form.points" />
+		</div>
+
+		<div>
+			<label>description</label>
+			<textarea type="text" ng-model="form.description"></textarea>
+		</div>
+
+		<button type="button" ng-click="hideForm()">Cancel</button>
+		<button type="submit">Submit</button>
+	</form>
+
+</div>
